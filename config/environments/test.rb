@@ -1,4 +1,6 @@
 Rails.application.configure do
+  config.neo4j.session_type = :http
+  config.neo4j.session_path = 'http://localhost:7475'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
