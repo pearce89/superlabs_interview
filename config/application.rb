@@ -28,8 +28,6 @@ module SuperlabsInterview
     # Notice embedded db is only available for JRuby
     # config.neo4j.session_type = :embedded  # default :http
     # config.neo4j.session_path = File.expand_path('neo4j-db', Rails.root)
-    config.neo4j.session_type = :http
-    config.neo4j.session.url = "http://#{ENV["neo4j_login"]}:#{ENV["neo4j_password"]}@localhost:7474"
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1

@@ -11,6 +11,7 @@ gem 'neo4j', '~> 8.0.0'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
 gem 'devise-neo4j'
 gem 'figaro'
+gem 'tzu'
 
 group :development do
   gem 'binding_of_caller'
@@ -25,6 +26,11 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'database_cleaner'
   gem 'rspec-rails'
+end
+
+group :test do
+  gem 'pry-rails'
+  gem 'database_cleaner'
+  gem 'tzu_mock'
 end
