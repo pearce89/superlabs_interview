@@ -1,0 +1,11 @@
+<% if movie.rating %>
+  <div class="rating">
+    <%= movie_rating(movie) %>
+  </div>
+  <h5 class="rating-num"><%= movie.rating %></h5>
+  <div>
+    <small><span class="glyphicon glyphicon-user"></span><%= movie.reviews.count %> total</small>
+  </div>
+<% else %>
+  <h5 class="rating-num"><small>There's no reviews yet, be the first</small></h5>
+<% end %>

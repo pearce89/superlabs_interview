@@ -1,0 +1,19 @@
+<% if @movie.rating %>
+  <h4>Rating breakdown</h4>
+  <% progress_bar_css_classes = %w(danger warning primary info success) %>
+  <% 5.times do |rating| %>
+    <div class="pull-left">
+      <div class="pull-left" style="width:35px; line-height:1;">
+        <div style="height:9px; margin:5px 0;"><%= rating + 1 %> <span class="glyphicon glyphicon-star"></span></div>
+      </div>
+      <div class="pull-left" style="width:180px;">
+        <div class="progress" style="height:9px; margin:8px 0;">
+          <div class="progress-bar progress-bar-<%= progress_bar_css_classes[rating] %>" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: <%= (@movie.reviews.group_by(&:rating)[rating + 1].try(:count).to_i / @movie.reviews.count.to_f) * 100 %>%">
+          <span class="sr-only"></span>
+          </div>
+        </div>
+      </div>
+      <div class="pull-right" style="margin-left:10px;"><%= @movie.reviews.group_by(&:rating)[rating + 1].try(:count).to_i %></div>
+    </div>
+  <% end %>
+<% end %>
