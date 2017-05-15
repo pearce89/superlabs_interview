@@ -40,7 +40,7 @@
                 </small>
               <% end %>
             </h4>
-            <%= render 'rating', movie: movie %>
+            <%= render 'movies/rating', movie: movie, total: true, user: nil %>
             <p class="card-text"><%= movie.studio %></p>
           </div>
         </div>

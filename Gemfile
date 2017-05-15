@@ -18,6 +18,7 @@ gem 'devise-bootstrapped'
 gem 'kaminari'
 gem 'kaminari-neo4j'
 gem 'bootstrap-kaminari-views'
+gem 'bootstrap_form'
 
 group :development do
   gem 'binding_of_caller'
