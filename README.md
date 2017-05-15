@@ -1,24 +1,25 @@
-# README
+### Movies App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+----------
 
-Things you may want to cover:
+**Movies App** is a simple application which was made during the job interview process at Superlabs.
 
-* Ruby version
+* Task description could be found [here](https://github.com/pearce89/superlabs_interview/blob/master/challenge.md).
 
-* System dependencies
+----------
 
-* Configuration
+Source code: https://github.com/pearce89/superlabs_interview.git
 
-* Database creation
+----------
 
-* Database initialization
+#### Sample data
 
-* How to run the test suite
+Execute `bundle exec rake movies:import`
 
-* Services (job queues, cache servers, search engines, etc.)
+----------
 
-* Deployment instructions
+![Movies list](public/02.jpg)
 
-* ...
+----------
+
+![Movies show](public/03.jpg)
