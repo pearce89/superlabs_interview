@@ -1,0 +1,15 @@
+<% @movie.comments.each do |comment| %>
+  <div class="row">
+    <div class="col-sm-3">
+      <!-- <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded"> -->
+      <div class="review-block-name"><%= comment.user.email %></div>
+      <div class="review-block-date"><%= comment.created_at.strftime('%b %d, %Y') %></div>
+    </div>
+    <div class="col-sm-9">
+      <%= render 'movies/rating', movie: @movie, total: false, user: current_user %>
+      <div class="review-block-title"></div>
+      <div class="review-block-description"><%= comment.body %></div>
+    </div>
+  </div>
+  <hr/>
+<% end %>
