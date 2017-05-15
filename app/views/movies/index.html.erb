@@ -1,0 +1,67 @@
+<div class='row'>
+  <div clas='col-sm-12'>
+    <%= paginate @movies, :theme => 'twitter-bootstrap-3' %>
+  </div>
+</div>
+
+<% @movies.each_slice(4).each do |row| %>
+  <div class="row">
+    <% row.each do |movie| %>
+      <div class="col-sm-3">
+        <div class="card">
+          <!-- <img class="card-img-top" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250×100-1&w=250&h=100" alt="Card image cap"> -->
+          <div class="card-block">
+            <h4 class="card-title">
+              <%= link_to movie.title.truncate_words(5, omission: ' ...'), movie %>
+
+              <% if movie.genre %>
+                <small>
+                  <span class="label label-info">
+                    <%= movie.genre %>
+                  </span>
+                </small>
+                &nbsp;
+              <% end %>
+
+              <% if movie.year %>
+                <small>
+                  <span class="label label-danger">
+                    <%= movie.year.strftime('%Y') %>
+                  </span>
+                </small>
+                &nbsp;
+              <% end %>
+
+              <% if movie.price %>
+                <small>
+                  <span class="label label-success">
+                    $<%= movie.price / 100.0 %>
+                  </span>
+                </small>
+              <% end %>
+            </h4>
+            <div class="rating">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+            </div>
+            <h5 class="rating-num">4.0</h1>
+            <div>
+                <span class="glyphicon glyphicon-user"></span>1,050,008 total
+            </div>
+            <p class="card-text"><%= movie.studio %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <!-- row -->
+<% end %>
+
+<div class='row'>
+  <div clas='col-sm-12'>
+    <%= paginate @movies, :theme => 'twitter-bootstrap-3' %>
+  </div>
+</div>
