@@ -34,6 +34,9 @@ class User
   property :current_sign_in_ip, type:  String
   property :last_sign_in_ip, type: String
 
+  has_many :in, :reviews, origin: :user
+  has_many :in, :comments, origin: :user
+
   ## Confirmable
   # property :confirmation_token
   # property :confirmed_at, type: DateTime

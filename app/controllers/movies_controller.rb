@@ -4,5 +4,6 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movie = Movie.find_by(uuid: params[:id])
   end
 end

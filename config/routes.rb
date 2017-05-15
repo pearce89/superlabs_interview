@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :movies, only: [:index, :show]
+  resources :movies, only: [:index, :show] do
+    resources :reviews, only: [:create], on: :member
+    resources :comments, only: [:create], on: :member
+  end
 end

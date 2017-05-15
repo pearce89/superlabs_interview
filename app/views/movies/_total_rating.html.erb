@@ -1,0 +1,14 @@
+<% if @movie.rating %>
+  <h2 class="bold padding-bottom-7">
+    <%= @movie.rating %> <small>/ 5</small>
+    <br/>
+    <small><span class="glyphicon glyphicon-user"></span><%= @movie.reviews.count %> total</small>
+  </h2>
+
+<% else %>
+  <h2 class="bold padding-bottom-7"><small>There's no reviews yet, be the first</small></h2>
+<% end  %>
+
+<% 5.times do |rating| %>
+  <%= link_to_review_rating(rating) %>
+<% end %>

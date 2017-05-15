@@ -40,17 +40,7 @@
                 </small>
               <% end %>
             </h4>
-            <div class="rating">
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star"></span>
-                <span class="glyphicon glyphicon-star-empty"></span>
-            </div>
-            <h5 class="rating-num">4.0</h1>
-            <div>
-                <span class="glyphicon glyphicon-user"></span>1,050,008 total
-            </div>
+            <%= render 'rating', movie: movie %>
             <p class="card-text"><%= movie.studio %></p>
           </div>
         </div>
